@@ -1,10 +1,10 @@
 package com.example.kiemthu1.Model;
 
 import lombok.*;
-
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @Builder
 public class SinhVien {
     private String maSV;

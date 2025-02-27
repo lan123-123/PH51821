@@ -65,7 +65,7 @@ public class SeleniumTest {
         inputSDT.click();
 
         WebElement inputSize = driver.findElement(By.xpath("//a[@id='size1']"));
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         inputSize.click();
 
         WebElement them = driver.findElement(By.xpath("//a[@id='addCart_page0']"));
