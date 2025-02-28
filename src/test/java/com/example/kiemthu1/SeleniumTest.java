@@ -4,6 +4,7 @@ import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -72,5 +73,14 @@ public class SeleniumTest {
         Thread.sleep(2000);
         them.click();
     }
+    @Test
+    public void timKiemTest() throws InterruptedException {
+        driver.get("https://vitimex.com.vn/");
+        WebElement search = driver.findElement(By.xpath("//input[@id='keyword']"));
+        search.sendKeys("Áo sơ mi ngắn tay Vitimex ASB7695");
+        search.sendKeys(Keys.RETURN);
+        Thread.sleep(3000);
+    }
+
 
 }

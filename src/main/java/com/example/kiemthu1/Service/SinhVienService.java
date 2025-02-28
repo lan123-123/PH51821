@@ -7,29 +7,33 @@ import java.util.List;
 
 public class SinhVienService {
     List<SinhVien> sinhVien = new ArrayList<>();
+
     //ADD
-    public void addSinhVien(SinhVien sv){
+    public void addSinhVien(SinhVien sv) {
         sinhVien.add(sv);
     }
+
     //DELETE
-    public boolean deleteSinhVien(String ma){
-        return sinhVien.removeIf(sv -> sv.getMaSV().equals(ma));
+    public boolean deleteSinhVien(String ma) {
+        boolean rm = sinhVien.removeIf(sinhVien -> sinhVien.getMaSV().equals(ma));
+        return rm;
     }
+
     //UPDATE
-    public void updateSinhVien(SinhVien sv){
-        if (sv.getMaSV()==null || sv.getMaSV().isBlank()){
+    public void updateSinhVien(SinhVien sv) {
+        if (sv.getMaSV() == null || sv.getMaSV().isBlank()) {
             throw new IllegalArgumentException("MaSV is null or empty");
         }
 
-        if (sv.getTen()==null || sv.getTen().isBlank()){
+        if (sv.getTen() == null || sv.getTen().isBlank()) {
             throw new IllegalArgumentException("MaSV is null or empty");
         }
 
-        if (sv.getChuyenNganh()==null || sv.getChuyenNganh().isBlank()){
-            throw new IllegalArgumentException("MaSV is null or empty");
+        if (sv.getChuyenNganh() == null || sv.getChuyenNganh().isBlank()) {
+            throw new ArithmeticException("MaSV is null or empty");
         }
-        for (SinhVien s : sinhVien){
-            if (s.getMaSV().equals(sv.getMaSV())){
+        for (SinhVien s : sinhVien) {
+            if (s.getMaSV().equals(sv.getMaSV())) {
                 s.setTen(sv.getTen());
                 s.setTuoi(sv.getTuoi());
                 s.setDiemTrungBinh(sv.getDiemTrungBinh());
@@ -40,5 +44,12 @@ public class SinhVienService {
 
 
     }
-
+    public List<SinhVien> getSinhVien() {
+        return sinhVien;
+    }
 }
+
+
+
+
+
