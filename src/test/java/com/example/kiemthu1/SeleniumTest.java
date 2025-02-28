@@ -81,6 +81,4 @@ public class SeleniumTest {
         search.sendKeys(Keys.RETURN);
         Thread.sleep(3000);
     }
-
-
 }
